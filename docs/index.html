@@ -1,31 +1,128 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Meu Site</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      max-width: 800px;
-      margin: 40px auto;
-      padding: 0 20px;
-      color: #222;
-    }
-    h1 { color: #1a1a1a; }
-    ul { line-height: 1.8; }
-    a { color: #0066cc; text-decoration: none; }
-    a:hover { text-decoration: underline; }
-  </style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Águas do Rio — Central de Links</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html, body {
+    min-height: 100vh;
+    font-family: 'Segoe UI', system-ui, sans-serif;
+  }
+
+  body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    background-image: url('aguas-do-rio.jpeg');
+    background-size: cover;
+    background-position: left top;
+    background-repeat: no-repeat;
+    background-color: #0a3d6b;
+  }
+
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: radial-gradient(ellipse at center, rgba(10,61,107,0.25), rgba(5,30,55,0.65));
+    z-index: 0;
+  }
+
+  .card {
+    position: relative;
+    z-index: 1;
+    max-width: 440px;
+    width: 90%;
+    padding: 44px 40px;
+    border-radius: 28px;
+    background: rgba(10,61,107,0.55);
+    border: 1px solid rgba(255,255,255,0.2);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    box-shadow: 0 25px 70px rgba(0,0,0,0.45);
+    text-align: center;
+    animation: aparecer 0.8s ease-out;
+  }
+
+  @keyframes aparecer {
+    from { opacity: 0; transform: translateY(30px) scale(0.96); }
+    to   { opacity: 1; transform: translateY(0) scale(1); }
+  }
+
+  .logo-texto {
+    font-size: 1.3rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+    color: #fff;
+    margin-bottom: 16px;
+  }
+
+  h1 {
+    font-size: 1.6rem;
+    color: #fff;
+    margin-bottom: 8px;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.3);
+  }
+
+  p {
+    color: rgba(255,255,255,0.9);
+    margin-bottom: 32px;
+  }
+
+  .links {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .links a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 15px 22px;
+    border-radius: 14px;
+    text-decoration: none;
+    color: #fff;
+    font-weight: 600;
+    background: linear-gradient(135deg, #0a5a9c, #00a3e0);
+    border: 1px solid rgba(255,255,255,0.18);
+    transition: all 0.25s ease;
+  }
+
+  .links a:hover {
+    transform: translateY(-3px);
+    background: linear-gradient(135deg, #00a3e0, #00b59c);
+    box-shadow: 0 12px 28px rgba(0,163,224,0.45);
+  }
+
+  .rodape {
+    margin-top: 28px;
+    font-size: 0.78rem;
+    color: rgba(255,255,255,0.65);
+  }
+
+  @media(max-width: 480px) {
+    .card { padding: 36px 26px; }
+    h1 { font-size: 1.35rem; }
+  }
+</style>
 </head>
 <body>
 
-  <h1>Bem-vindo!</h1>
-  <p>Aqui estão os relatórios disponíveis:</p>
-
-  <ul>
-    <li><a href="DRE_Faturamento.html">DRE Faturamento</a></li>
-  </ul>
+<main class="card">
+  <div class="logo-texto">💧 ÁGUAS DO RIO</div>
+  <h1>Central de Links</h1>
+  <p>Acesse o relatório abaixo</p>
+  <nav class="links">
+    <a href="DRE_Faturamento.html">📊 DRE Faturamento</a>
+  </nav>
+  <div class="rodape">&copy; 2026 Águas do Rio. Todos os direitos reservados.</div>
+</main>
 
 </body>
 </html>
